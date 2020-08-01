@@ -1,0 +1,42 @@
+<div class="container">
+    <div style="margin: 30px; width: 300px; height: 420px; background-color: lightseagreen;  border-radius:7px;">
+        <div class="">
+            <h2 style="font-size: 20px; margin-bottom: 15px; margin-left: 20px;color: white;"> Problema do conjunto e seus elementos
+                únicos </h2>
+            <div style="margin-left: 20px;">
+                <span>
+                    <label for="float-input">Quantidade</label>
+                    <br>
+                    <input id="quantidade-input" type="number" #numQ [disabled]="!statusBotaoOkQuantidade" pInputText
+                        placeholder="Digite a quantidade" pTooltip="Somente números naturais">
+                    <button style="margin-left: 5px;" pButton label="OK" [disabled]="!statusBotaoOkQuantidade"
+                        (click)="definirQuantidadeDeK(numQ.value)"></button>
+                </span>
+                <br>
+                <span>
+                    <label for="float-input">Número</label>
+                    <br>
+                    <input id="numero-input" type="number" pInputText [disabled]="!statusBotaoOkLeituraNumero" #numK
+                        placeholder="Informe um número" pTooltip="Entre -1000 a 1000">
+                    <button style="margin-left: 5px;" pButton label="OK" [disabled]="!statusBotaoOkLeituraNumero"
+                        class="btn btn-success" (click)="incluirNovoValor(numK)"></button>
+                </span>
+                <br>
+                <br>
+
+                <span>
+                    <label style="margin-left: 0px;" for="float-input">Saída</label>
+                    <br>
+                    <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" readonly="true" name="saida"
+                        [(ngModel)]="numerosProcessadosParaSaida"> Saída</textarea>
+                    <br>
+
+                    <button pButton label="Zerar e Repetir" style="margin-left: 60px;" [disabled]="!statusBotaoOkZerar"
+                        (click)="zerarERecomecar()" class="btn btn-warning"></button>
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</div>
